@@ -19,9 +19,5 @@ int main(int argc, const char* argv[]) {
     
     SceneParser::FileContext* tree = parser.file();
 
-    ImageVisitor visitor;
-    Scene scene = std::any_cast<Scene>(visitor.visitFile(tree));
-    scene.draw();	
-
     return 0;
 }
