@@ -230,7 +230,7 @@ include_directories(${PROJECT_SOURCE_DIR}
   )
   
 
-add_executable(antlr4-tutorial antlr.cpp Scene.cpp ImageVisitor.cpp               
+add_executable(antlr4-tutorial antlr.cpp               
                ${ANTLR_SceneGrammarParser_CXX_OUTPUTS})
 
 # link required libraries
