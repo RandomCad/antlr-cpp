@@ -3,7 +3,6 @@
 #include "antlr4-runtime.h"
 #include "libs/SceneLexer.h"
 #include "libs/SceneParser.h"
-#include "ImageVisitor.h"
 
 using namespace std;
 using namespace antlr4;
@@ -17,11 +16,7 @@ int main(int argc, const char* argv[]) {
     CommonTokenStream tokens(&lexer);
     SceneParser parser(&tokens);    
     
-    SceneParser::FileContext* tree = parser.file();
-
-    ImageVisitor visitor;
-    Scene scene = std::any_cast<Scene>(visitor.visitFile(tree));
-    scene.draw();	
+    auto tree = parser.t();
 
     return 0;
 }
